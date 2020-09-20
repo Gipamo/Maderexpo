@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './img/quienes.png';
+import Icon from './img/icono.png';
 import './App.css';
 
 
@@ -22,51 +22,18 @@ function App() {
             </div>
         </div>
       </header>
-
-      <div class="grid">
-        <div class="grid1">
-          <h2>¿Quienes Somos?</h2>
-        </div>
-        <div class="grid1">
-        <h2>Mision y Vision</h2>
-        </div>
-        <div class="grid1">
-        <h2>Nuestra Historia</h2>
-        </div>
-
-
-
-        <div class="grid2">
-          <div class="notice">
-              <img src={logo} class="imagenes"></img><aside>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</aside>
-            </div>
-          
-        </div>
-        <div class="grid2">
-          
-        </div>
-        <div class="history">
-        <aside>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,but also the leap into electronic typesetting, remaining essentially unchanged</aside>
-        </div>
-
-
-
-        <div class="grid3">
-        <img src={logo} class="imagenes"></img><aside>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</aside>
-        </div>
-        <div class="grid3">
-          
-        </div>
-        <div class="history" id="historyback">
-        
-        </div>
+      <div class="parent">
+      <div class="div1"> <img src={Icon} alt="Icono" /><br/><a href="">Sedes Fisicas</a> </div>
+      <div class="div2"> <img src={Icon} alt="Icono" /><br/><a href="">Preguntas Frecuentes</a> </div>
+      <div class="div3"> <img src={Icon} alt="Icono" /><br/><a href="">Glosario</a> </div>
+      <div class="div4"> <img src={Icon} alt="Icono" /><br/><a href="">Buzon de Contacto</a> </div>
+      <div class="div5"> <img src={Icon} alt="Icono" /><br/><a href="">Buzon de Sugerencias</a> </div>
+      <div class="div6"> <img src={Icon} alt="Icono" /><br/><a href="">Preguntas del Producto</a> </div>
+</div>
       </div>
 
 
 
-
-
-    </div>
   );
 }
 
