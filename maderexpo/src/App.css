@@ -166,13 +166,13 @@ body{
     width: 200px;
     height: 200px;
     border-radius: 50px;
+    text-align: center;
   }
   .parent div a{
     font-family: var(--title);
     font-size: 18px;
     color: #F2CF63;
     text-decoration: none;
-    align-items: center;
     bottom:50px;
   }
   .div1 { grid-area: 2 / 2 / 3 / 3;
