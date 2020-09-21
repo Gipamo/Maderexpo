@@ -1,0 +1,28 @@
+.gridempezar{
+    width: 100%;
+    display:grid;
+    grid-template-columns: .2fr .5fr 1fr;
+    grid-template-rows: .5fr .3fr 1fr;
+    overflow: hidden;
+}
+.slogan{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    background-image: linear-gradient(#f2f2f2, #f2f2f2);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 60% 2px;
+}
+.img_complete{
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+    z-index: -1;
+    width: 100%;
+    transition: 1s;
+}
+.gridempezar:hover img{
+    transform: scale(1.03);
+}
+.slogan h1{
+    color: #F2F2F2;
+}

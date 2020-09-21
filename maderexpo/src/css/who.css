@@ -1,0 +1,30 @@
+.who_minWidth{
+  min-width: 1000px;
+}
+.who_minWidth{
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 70px 1fr;
+  grid-column-gap: 100px;
+}
+.grid_title{
+  text-align: center;
+}
+
+.grid_whoAre{
+  display: flex;
+  align-items: center;
+}
+
+.Mision_vision h3{
+  background: #F2E8B3;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+.history p{
+  text-align: justify;
+  margin-right: 10px;
+}
+
