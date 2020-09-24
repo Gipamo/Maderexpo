@@ -7,7 +7,8 @@ import Product from './components/Product'
 import Compromise from './components/Compromise'
 import Relation from './components/ButtonsRelation'
 import ProductFormulary from './components/ProductFormulary'
-import './App.css';
+import Map from './components/Mapa'
+import './App.css'; 
 import { Switch, Route,Link } from 'react-router-dom'
 
 //poner la ruta del componente encima de la start para que funcione correctamente
@@ -26,6 +27,7 @@ function App() {
           <Route path="/compromise" component={Compromise}/>
           <Route path="/relation" component={Relation}/>
           <Route path="/productform" component={ProductFormulary}/>
+          <Route path="/map" component={Map}/>
           <Route path="/" component={Start}/>
   
       </Switch>
