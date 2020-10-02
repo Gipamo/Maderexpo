@@ -10,11 +10,15 @@ import ProductFormulary from './components/ProductFormulary'
 import Map from './components/Mapa'
 import './App.css'; 
 import { Switch, Route,Link } from 'react-router-dom'
+import{
+  useFirebaseApp
+} from 'reactfire';
 
 //poner la ruta del componente encima de la start para que funcione correctamente
 
 
 function App() {
+  const firebase=useFirebaseApp();
 
   return (
     <div className="App">
