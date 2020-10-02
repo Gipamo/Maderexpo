@@ -19,6 +19,7 @@ class PQRs extends Component {
     inputPaises: [],
     tipoSolicitud: "Pregunta empresa",
     tipoMedida: "mm",
+    inputCorreo: "",
     inputSolicitud: "",
     btnEnviar: "Enviar",
     medidaDisabled: "disabled",
@@ -32,6 +33,7 @@ class PQRs extends Component {
       inputPaises,
       tipoSolicitud,
       tipoMedida,
+      inputCorreo,
       inputSolicitud,
     } = this.state;
     this.solicitudesStorage.push({
@@ -40,6 +42,7 @@ class PQRs extends Component {
       inputPaises: inputPaises[0].name,
       tipoSolicitud,
       tipoMedida,
+      inputCorreo,
       inputSolicitud,
     });
 
@@ -102,7 +105,7 @@ class PQRs extends Component {
             </select>
           </span>
           <span>
-            <label className="subtitle lblNombre" htmlFor="nombre">
+            <label className="subtitle" htmlFor="nombre">
               Nombre de la{" "}
               {this.state.tipoUsuario === "Natural" ? " persona:" : " empresa:"}
             </label>
@@ -117,15 +120,10 @@ class PQRs extends Component {
             ></input>
           </span>
           <span>
-            <label className="subtitle lblPais" htmlFor="pais">
+            <label className="subtitle" htmlFor="pais">
               Seleccione un país:
             </label>
-            <select
-              id="pais"
-              name="country"
-              className="inputPais"
-              id="countryId"
-            >
+            <select id="pais" name="country" id="countryId">
               {this.state.inputPaises.map((pais) => {
                 return (
                   <option key={pais.name} value={pais.name}>
@@ -172,14 +170,31 @@ class PQRs extends Component {
               })}
             </select>
           </span>
-          <input
-            id="solicitud"
-            className="solicitudInput"
-            name="solicitud"
-            onChange={(e) => this.setState({ inputSolicitud: e.target.value })}
-            placeholder="Introduzca su solicitud detalladamente"
-          ></input>
-          <button className="btn_dark">Enviar</button>
+          <span>
+            <label htmlFor="correo" className="subtitle">
+              Digite un correo electrónico:
+            </label>
+            <input
+              id="correo"
+              name="correo"
+              className="input"
+              placeholder="Ingrese correo"
+              type="email"
+              onChange={(e) => this.setState({ inputCorreo: e.target.value })}
+            ></input>
+          </span>
+          <span>
+            <input
+              id="solicitud"
+              className="solicitudInput"
+              name="solicitud"
+              onChange={(e) =>
+                this.setState({ inputSolicitud: e.target.value })
+              }
+              placeholder="Introduzca su solicitud detalladamente"
+            ></input>
+            <button className="btn_dark">Enviar</button>
+          </span>
         </form>
       </div>
     );

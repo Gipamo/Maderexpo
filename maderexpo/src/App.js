@@ -9,6 +9,7 @@ import Relation from "./components/ButtonsRelation";
 import ProductFormulary from "./components/ProductFormulary";
 import Map from "./components/Mapa";
 import PQRs from "./components/PQRs";
+import PQRsCrud from "./components/PQRsCrud";
 import "./App.css";
 import { Switch, Route, Link } from "react-router-dom";
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/productform" component={ProductFormulary} />
           <Route path="/map" component={Map} />
           <Route path="/pqrs" component={PQRs} />
+          <Route path="/pqrscrud" component={PQRsCrud} />
           <Route path="/" component={Start} />
         </Switch>
       </main>

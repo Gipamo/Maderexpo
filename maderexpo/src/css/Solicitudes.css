@@ -1,0 +1,8 @@
+table {
+  text-align: center;
+  width: 100%;
+  border-spacing: 3rem;
+}
+tr th {
+  margin-bottom: 2em;
+}

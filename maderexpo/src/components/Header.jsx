@@ -1,11 +1,6 @@
 import React from "react";
 import "../css/App.css";
-import Login from "./Login";
-import Who from "./Who";
-import Product from "./Product";
-import ReactDOM from "react-dom";
-import App from "../App";
-import { Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
