@@ -33,7 +33,7 @@ function Login(){
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <input type="email" placeholder="user@email.com" id="email" onChange={(ev=> setEmail(ev.target.value))}></input>
                 <input type="password" id="password" placeholder="password" onChange={(ev=> setPassword(ev.target.value))}></input>
-                <button class="btn btn_dark" type="submit" onClick={submit}>Iniciar</button>
+                <Link to="/pqrscrud"><button class="btn btn_dark" type="submit" onClick={submit}>Iniciar</button></Link>
                 
                 <div class="links">
                     <a href="">¿Olvidaste la contraseña?</a>
@@ -50,8 +50,6 @@ function Login(){
             }
         </section>
     )
-}
-
 
 
 export default Login;

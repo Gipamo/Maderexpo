@@ -9,23 +9,25 @@ import Relation from './components/ButtonsRelation'
 import ProductFormulary from './components/ProductFormulary'
 import Map from './components/Mapa'
 import Glosary from './components/Glosary'
+import PQRs from'./components/PQRs'
+import PQRsCrud from'./components/PQRs'
 import './App.css'; 
 import { Switch, Route,Link } from 'react-router-dom'
 import{
   useFirebaseApp
 } from 'reactfire';
 
-//poner la ruta del componente encima de la start para que funcione correctamente
 
+//poner la ruta del componente encima de la start para que funcione correctamente
 
 function App() {
   const firebase=useFirebaseApp();
 
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <main>
-      <Switch>
+        <Switch>
           <Route path="/login" component={Login} />
           <Route path="/who" component={Who}/>
           <Route path="/product" component={Product}/>
@@ -34,11 +36,13 @@ function App() {
           <Route path="/productform" component={ProductFormulary}/>
           <Route path="/map" component={Map}/>
           <Route path="/Glosary" component={Glosary}/>
+          <Route path="/pqrs" component={PQRs} />
+          <Route path="/pqrscrud" component={PQRsCrud} />
           <Route path="/" component={Start}/>
   
       </Switch>
-      </main>
 
+      </main>
     </div>
   );
 }
