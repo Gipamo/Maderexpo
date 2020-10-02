@@ -8,9 +8,7 @@ function Start(){
     return(
         <div class="gridempezar">
             <div class="slogan">
-                <h1 class="title">Madera Teca sostenible y de la mejor calidad
-                                    Moderna, sostenible y de fácil manipulación
-                </h1>
+                <h1 class="title">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
             </div>
             <img src={bosque} alt="" class="img_complete"></img>
         </div>
