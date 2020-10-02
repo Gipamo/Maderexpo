@@ -11,23 +11,60 @@ class PQRs extends Component {
     "Empleo",
     "Otros",
   ];
+  tipoMedidas = ["mm"];
+  solicitudesStorage = [];
   state = {
     tipoUsuario: "Natural",
     inputNombre: "",
     inputPaises: [],
     tipoSolicitud: "Pregunta empresa",
-    medidas: [],
+    tipoMedida: "mm",
     inputSolicitud: "",
     btnEnviar: "Enviar",
+    medidaDisabled: "disabled",
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    const {
+      inputNombre,
+      tipoUsuario,
+      inputPaises,
+      tipoSolicitud,
+      tipoMedida,
+      inputSolicitud,
+    } = this.state;
+    this.solicitudesStorage.push({
+      inputNombre,
+      tipoUsuario,
+      inputPaises: inputPaises[0].name,
+      tipoSolicitud,
+      tipoMedida,
+      inputSolicitud,
+    });
+
+    window.localStorage.setItem(
+      "solicitudes",
+      JSON.stringify(this.solicitudesStorage)
+    );
+    this.cleanBoxes.apply();
   };
 
   handleChange = (e) => {
     this.setState({ tipoUsuario: e.target.value });
+  };
+
+  cleanBoxes = () => {
+    this.setState({
+      tipoUsuario: "Natural",
+      inputNombre: "",
+      inputPaises: [],
+      tipoSolicitud: "Pregunta empresa",
+      tipoMedida: "mm",
+      inputSolicitud: "",
+      btnEnviar: "Enviar",
+      medidaDisabled: "disabled",
+    });
   };
 
   async componentDidMount() {
@@ -36,11 +73,34 @@ class PQRs extends Component {
     this.setState({ inputPaises: data });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (
+      prevState.tipoSolicitud !== this.state.tipoSolicitud &&
+      this.state.tipoSolicitud === "Compra"
+    ) {
+      this.setState({ medidaDisabled: "enabled" });
+    } else if (
+      prevState.tipoSolicitud !== this.state.tipoSolicitud &&
+      this.state.tipoSolicitud !== "Compra"
+    ) {
+      this.setState({ medidaDisabled: "disabled" });
+    }
+  }
+
   render() {
     return (
       <div>
         <h3 className="title">Realiza tu petición</h3>
         <form className="pqrForm" onSubmit={this.handleSubmit}>
+          <span>
+            <label className="subtitle" htmlFor="pais">
+              Seleccione un tipo de persona:
+            </label>
+            <select id="pais" name="country" onChange={this.handleChange}>
+              <option value="Natural">Natural</option>
+              <option value="Juridica">Juridica</option>
+            </select>
+          </span>
           <span>
             <label className="subtitle lblNombre" htmlFor="nombre">
               Nombre de la{" "}
@@ -76,15 +136,6 @@ class PQRs extends Component {
             </select>
           </span>
           <span>
-            <label className="subtitle" htmlFor="pais">
-              Seleccione un tipo de persona:
-            </label>
-            <select id="pais" name="country" onChange={this.handleChange}>
-              <option value="Natural">Natural</option>
-              <option value="Juridica">Juridica</option>
-            </select>
-          </span>
-          <span>
             <label className="subtitle" htmlFor="peticion">
               Seleccione un tipo de solicitud:
             </label>
@@ -97,6 +148,25 @@ class PQRs extends Component {
                 return (
                   <option value={solicitud} key={solicitud}>
                     {solicitud}
+                  </option>
+                );
+              })}
+            </select>
+          </span>
+
+          <span className={`${this.state.medidaDisabled}`}>
+            <label className="input" htmlFor="medida">
+              Seleccione un tipo de medida:
+            </label>
+            <select
+              id="medida"
+              name="medida"
+              onChange={(e) => this.setState({ tipoMedida: e.target.value })}
+            >
+              {this.tipoMedidas.map((medida) => {
+                return (
+                  <option value={medida} key={medida}>
+                    {medida}
                   </option>
                 );
               })}
