@@ -10,7 +10,7 @@ import ProductFormulary from './components/ProductFormulary'
 import Map from './components/Mapa'
 import Glosary from './components/Glosary'
 import PQRs from'./components/PQRs'
-import PQRsCrud from'./components/PQRs'
+import PQRsCrud from'./components/PQRsCrud'
 import './App.css'; 
 import { Switch, Route,Link } from 'react-router-dom'
 import{
