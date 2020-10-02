@@ -18,14 +18,27 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 70%;
+    width: 50%;
     margin: auto;
-    padding-bottom: 70px;
+    margin-top: 2%;
+    padding-bottom: 30px;
+    margin-bottom: 4em;
 }
+
+.titulo-form{
+    text-align: center;
+    background-color: #F2D544;
+    margin-bottom: 0.4em;
+  }
+  
+
 form label{
     font-size: 20px;
+    margin-left: 1em;
 }
 form input{
+    margin-left: 1em;
+    margin-right: 1em;
     background: #F2E8B3;
 }
 form textarea{
@@ -33,7 +46,9 @@ form textarea{
     height: 100px;
     border-radius: 5px;
     border:none;
-    padding: 10px 30px;
+    padding: 0px 10px;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 form input[type="submit"]{
     margin-top:20px;
