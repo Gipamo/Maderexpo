@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDom from 'react-dom';
 import { render } from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import './App.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
-
+import firebaseconfig from './server/firebase'
+import {FirebaseAppProvider} from 'reactfire'
 
 
 render((
   <BrowserRouter>
-    <App/>
+  <FirebaseAppProvider firebaseConfig={firebaseconfig}>
+    <Suspense fallback={'conectando a la app..'}>
+      <App/>
+      </Suspense>
+    </FirebaseAppProvider>
   </BrowserRouter>
 ),document.getElementById('root'));
 

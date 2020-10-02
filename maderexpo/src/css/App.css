@@ -191,41 +191,61 @@ body {
 
 .parent {
   display: grid;
-  grid-template-columns: 1.5fr repeat(3, 1fr) 1.5fr;
-  grid-template-rows: 0.3fr repeat(2, 1fr) 0.3fr;
+  grid-template-columns: 2.5fr 2.5fr 2.5fr;
+  grid-template-rows: 0.5fr repeat(2, 1fr) 0.5fr;
   grid-column-gap: 15px;
   grid-row-gap: 15px;
+  align-self: center;
+  }
+  
+  .upButton { 
+    grid-area: 2 / 2 / 3 / 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 1 / 3 / 2 / 4; }
+
+.downButton { 
+  grid-area: 3 / 2 / 4 / 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  margin-left: 100px;
+
+
+
 }
 
-.parent div {
-  background-color: #0d0d0d;
-  width: 200px;
-  height: 200px;
-  border-radius: 50px;
-  text-align: center;
-}
-.parent div a {
-  font-family: var(--title);
-  font-size: 18px;
-  color: #f2cf63;
-  text-decoration: none;
-  bottom: 50px;
-}
-.div1 {
-  grid-area: 2 / 2 / 3 / 3;
-}
-.div2 {
-  grid-area: 2 / 3 / 3 / 4;
-}
-.div3 {
-  grid-area: 2 / 4 / 3 / 5;
-}
-.div4 {
-  grid-area: 3 / 2 / 4 / 3;
-}
-.div5 {
-  grid-area: 3 / 3 / 4 / 4;
-}
-.div6 {
-  grid-area: 3 / 4 / 4 / 5;
-}
+.div4 { grid-area: 1 / 1 / 2 / 2; }
+.div6 { grid-area: 1 / 2 / 2 / 3; }
+
+  .parent div{
+    background-color: #0D0D0D;
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+    text-align: center;
+  }
+  .parent div a{
+    font-family: var(--title);
+    font-size: 18px;
+    color: #F2CF63;
+    text-decoration: none;
+    bottom:50px;
+  }
+
+
+
+
+
+
+
+
