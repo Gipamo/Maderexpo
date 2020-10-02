@@ -7,7 +7,7 @@ import '../css/glosary.css'
 function Glosary(){
 
     return(
-        <main id="glosary">
+        <div id="glosary">
 
         <div id="tituloglosario"><h1 id="title">GLOSARIO</h1></div>
         <div class="abc subtitle">
@@ -92,7 +92,7 @@ function Glosary(){
                 <a href="http://ipc.org.co/index.php/regiones/uraba-antioqueno/" class="paragraph">Referencia</a>   
             </div>
         </section>
-    </main>
+    </div>
     )
 
 }
