@@ -15,7 +15,7 @@
     margin:0;
 }
 /* Configuración section */
-section{
+#signIn{
     width: 100%;
     height: 100vh;
     display: flex;
@@ -24,7 +24,7 @@ section{
     min-width: 900px;
     min-height: 400px;
 }
-section div:nth-child(1){
+#signIn div:nth-child(1){
     width: 40%;
     height: 70%;
     background-color: var(--color-yellow);
@@ -40,13 +40,13 @@ section div:nth-child(1){
     background-color: var(--color-white);
 }
 /* Configuración tamaño y fuente de los elementos del div principal */
-section div > *{
+#signIn div > *{
     width: 60%;
     font-size: 18px;
     font-family: var(--paragraph);
 }
 /* Titulo */
-section div h1{
+#signIn div h1{
     font-size: 45px;
     font-family: var(--title-name);
     text-align: center;
@@ -55,7 +55,7 @@ h1{
     color: var(--color-black);
 }
 /* Parrafo */
-section div p{
+#signIn div p{
     text-align: center;
 }
 /* inputs */

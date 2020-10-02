@@ -15,7 +15,7 @@ function ButtonsRelation(){
                 <div class="upButton">
                     <div class="div1"> <Link to="/map"> <img src={IconMap} alt="Icono" /><br/><a href="">Sedes Fisicas</a> </Link></div>
                     <div class="div2"> <img src={IconQuestion} alt="Icono" /><br/><a href="">Preguntas Frecuentes</a> </div>
-                    <div class="div3"> <img src={IconGlosary} alt="Icono" /><br/><a href="">Glosario</a> </div>  
+                    <div class="div3"> <Link to="/glosary"> <img src={IconGlosary} alt="Icono"/><br/><a href="">Glosario</a></Link></div>  
                 </div>
                 <div class="downButton"> 
                     <div class="div4"> <img src={IconSugest} alt="Icono" /><br/><a href="">Buzon de Sugerencias</a> </div>

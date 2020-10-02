@@ -16,7 +16,7 @@ function Product(){
         </div>
         <div class="container_definition">
             <h1 class="subtitle">Madera Teca</h1>
-            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In explicabo consequuntur labore natus nisi, debitis qui esse! Nemo veniam recusandae enim, quam officia voluptate est voluptas repellat rem porro exercitationem!</p>
+            <p class="paragraph">La madera de teca destaca por sus propiedades cuando se usa para fabricar productos que se colocan en exterior, especialmente por su durabilidad natural. Actualmente es una de las maderas tropicales más conocidas en el mercado y entre sus múltiples usos destacan la construcción naval y el mobiliario de exterior y de lujo.</p>
             <img src={tecabloque} alt=""></img>
         </div>
     </div>

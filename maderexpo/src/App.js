@@ -8,6 +8,7 @@ import Compromise from './components/Compromise'
 import Relation from './components/ButtonsRelation'
 import ProductFormulary from './components/ProductFormulary'
 import Map from './components/Mapa'
+import Glosary from './components/Glosary'
 import './App.css'; 
 import { Switch, Route,Link } from 'react-router-dom'
 import{
@@ -32,6 +33,7 @@ function App() {
           <Route path="/relation" component={Relation}/>
           <Route path="/productform" component={ProductFormulary}/>
           <Route path="/map" component={Map}/>
+          <Route path="/Glosary" component={Glosary}/>
           <Route path="/" component={Start}/>
   
       </Switch>
