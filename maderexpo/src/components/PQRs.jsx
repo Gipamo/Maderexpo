@@ -115,7 +115,7 @@ class PQRs extends Component {
               name="nombreUsuario"
               onChange={(e) => this.setState({ inputNombre: e.target.value })}
               placeholder={`Introduce el nombre de la${
-                this.state.tipoUsuario === "Natural" ? " persona:" : " empresa:"
+                this.state.tipoUsuario === "Natural" ? " persona" : " empresa"
               }`}
             ></input>
           </span>
@@ -178,7 +178,7 @@ class PQRs extends Component {
               id="correo"
               name="correo"
               className="input"
-              placeholder="Ingrese correo"
+              placeholder="Ingrese un correo electrónico"
               type="email"
               onChange={(e) => this.setState({ inputCorreo: e.target.value })}
             ></input>
