@@ -1,0 +1,11 @@
+
+/* COMPROMISO AMBIENTAL STYLES */
+ul {
+  list-style: none;
+}
+li::before {
+  font-family: FontAwesome;
+  content: "\f00c";
+  color: var(--color-yellow-dark);
+  margin-right: 10px;
+}

@@ -1,0 +1,56 @@
+/* contenedor de definición del producto */
+.container_definition{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.container_definition h1{
+    margin-bottom: 0;
+}
+.container_definition p{
+    text-align: center;
+    width: 50%;
+}
+
+/* Formulario */
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+    margin-top: 2%;
+    padding-bottom: 30px;
+    margin-bottom: 4em;
+}
+
+.titulo-form{
+    text-align: center;
+    background-color: #F2D544;
+    margin-bottom: 0.4em;
+  }
+  
+
+form label{
+    font-size: 20px;
+    margin-left: 1em;
+}
+form input{
+    margin-left: 1em;
+    margin-right: 1em;
+    background: #F2E8B3;
+}
+form textarea{
+    background: #F2E8B3;
+    height: 100px;
+    border-radius: 5px;
+    border:none;
+    padding: 0px 10px;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+form input[type="submit"]{
+    margin-top:20px;
+    width: 200px;
+}

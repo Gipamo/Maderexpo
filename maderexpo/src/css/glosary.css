@@ -1,0 +1,56 @@
+
+.abc{
+    display:flex;
+    justify-content: space-around;
+    background: #F2D544;
+}
+.abc button{
+    background: #F2D544;
+    border:none;
+    text-transform: uppercase;
+    width: 2em;
+}
+.abc button:hover{
+    background:#F2F2F2;
+}
+#glosary .title{
+    text-align: center;
+}
+#glosary .search{
+    display:flex;
+}
+#glosary input[type="search"]{
+    width: 100%;
+    background: #F2E8B3;
+}
+#glosary input[type="button"]{
+    transition: .5s;
+}
+#glosary input[type="button"]:hover{
+    transform: scale(.95);
+}
+.container2{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+.item a{
+    width: auto;
+    text-decoration: none;
+    transition: 1s;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+    color:  blueviolet;
+    float: right;
+}
+.item a:hover{
+    background-size: 100% 2px;
+}
+
+#tituloglosario{
+    margin-top: 1%;
+    text-align: center;
+}
