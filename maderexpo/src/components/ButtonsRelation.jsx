@@ -5,7 +5,7 @@ import IconQuestion from '../img/preguntas-mas-frecuentes.png';
 import IconGlosary from '../img/diccionario.png';
 import IconSugest from '../img/bueno.png';
 import IconProduct from '../img/inventario.png';
-import { Switch, Route,Link } from 'react-router-dom'
+import {Link } from 'react-router-dom'
 
 function ButtonsRelation(){
 

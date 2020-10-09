@@ -2,7 +2,6 @@ import React from 'react';
 import '../css/start.css'
 import '../css/map.css'
 import GoogleMapReact from 'google-map-react';
-import { Marker } from 'google-maps-react';
 
 
 const Markero = props => {

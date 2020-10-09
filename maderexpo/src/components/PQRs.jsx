@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {db} from '../server/firestore';
 import "../css/PQRs.css";
 
 class PQRs extends Component {
@@ -15,56 +16,46 @@ class PQRs extends Component {
   solicitudesStorage = [];
   state = {
     tipoUsuario: "Natural",
-    inputNombre: "",
-    inputPaises: [],
+    nombreUsuario: "",
+    pais: [],
+    paises: [],
     tipoSolicitud: "Pregunta empresa",
-    tipoMedida: "mm",
-    inputCorreo: "",
-    inputSolicitud: "",
+    medida: "mm",
+    correo: "",
+    solicitud: "",
     btnEnviar: "Enviar",
     medidaDisabled: "disabled",
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
     const {
-      inputNombre,
+      nombreUsuario,
       tipoUsuario,
-      inputPaises,
+      pais,
       tipoSolicitud,
-      tipoMedida,
-      inputCorreo,
-      inputSolicitud,
+      medida,
+      correo,
+      solicitud,
     } = this.state;
-    this.solicitudesStorage.push({
-      inputNombre,
-      tipoUsuario,
-      inputPaises: inputPaises[0].name,
-      tipoSolicitud,
-      tipoMedida,
-      inputCorreo,
-      inputSolicitud,
-    });
-
-    window.localStorage.setItem(
-      "solicitudes",
-      JSON.stringify(this.solicitudesStorage)
-    );
+    await db.collection('PeticionPQR').doc().set({nombreUsuario,tipoUsuario,pais,tipoSolicitud,medida,correo,solicitud});
     this.cleanBoxes.apply();
   };
 
   handleChange = (e) => {
-    this.setState({ tipoUsuario: e.target.value });
+    const {name,value} = e.target;
+    this.setState({ [name]: value });
   };
 
   cleanBoxes = () => {
     this.setState({
       tipoUsuario: "Natural",
-      inputNombre: "",
-      inputPaises: [],
+      nombreUsuario: "",
+      pais: [],
       tipoSolicitud: "Pregunta empresa",
-      tipoMedida: "mm",
-      inputSolicitud: "",
+      correo: '',
+      medida: "mm",
+      solicitud: "",
       btnEnviar: "Enviar",
       medidaDisabled: "disabled",
     });
@@ -73,10 +64,10 @@ class PQRs extends Component {
   async componentDidMount() {
     const response = await fetch("https://restcountries.eu/rest/v2/all");
     const data = await response.json();
-    this.setState({ inputPaises: data });
+    this.setState({ paises: data });
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps,prevState) {
     if (
       prevState.tipoSolicitud !== this.state.tipoSolicitud &&
       this.state.tipoSolicitud === "Compra"
@@ -99,7 +90,7 @@ class PQRs extends Component {
             <label className="subtitle" htmlFor="pais">
               Seleccione un tipo de persona:
             </label>
-            <select id="pais" name="country" onChange={this.handleChange}>
+            <select id="tipoUsuario" name="tipoUsuario" onChange={this.handleChange}>
               <option value="Natural">Natural</option>
               <option value="Juridica">Juridica</option>
             </select>
@@ -113,18 +104,19 @@ class PQRs extends Component {
               id="nombre"
               className="input inputNombre"
               name="nombreUsuario"
-              onChange={(e) => this.setState({ inputNombre: e.target.value })}
+              onChange={this.handleChange}
               placeholder={`Introduce el nombre de la${
                 this.state.tipoUsuario === "Natural" ? " persona" : " empresa"
               }`}
+              value={this.state.nombreUsuario}
             ></input>
           </span>
           <span>
             <label className="subtitle" htmlFor="pais">
               Seleccione un país:
             </label>
-            <select id="pais" name="country" id="countryId">
-              {this.state.inputPaises.map((pais) => {
+            <select id="pais" name="pais" id="countryId" onChange={this.handleChange}>
+              {this.state.paises.map((pais) => {
                 return (
                   <option key={pais.name} value={pais.name}>
                     {pais.name}
@@ -139,8 +131,8 @@ class PQRs extends Component {
             </label>
             <select
               id="peticion"
-              name="peticion"
-              onChange={(e) => this.setState({ tipoSolicitud: e.target.value })}
+              name="tipoSolicitud"
+              onChange={this.handleChange}
             >
               {this.tipoSolicitudes.map((solicitud) => {
                 return (
@@ -159,7 +151,7 @@ class PQRs extends Component {
             <select
               id="medida"
               name="medida"
-              onChange={(e) => this.setState({ tipoMedida: e.target.value })}
+              onChange={this.handleChange}
             >
               {this.tipoMedidas.map((medida) => {
                 return (
@@ -180,7 +172,8 @@ class PQRs extends Component {
               className="input"
               placeholder="Ingrese un correo electrónico"
               type="email"
-              onChange={(e) => this.setState({ inputCorreo: e.target.value })}
+              onChange={this.handleChange}
+              value={this.state.correo}
             ></input>
           </span>
           <span>
@@ -188,10 +181,9 @@ class PQRs extends Component {
               id="solicitud"
               className="solicitudInput"
               name="solicitud"
-              onChange={(e) =>
-                this.setState({ inputSolicitud: e.target.value })
-              }
+              onChange={this.handleChange}
               placeholder="Introduzca su solicitud detalladamente"
+              value={this.state.solicitud}
             ></input>
             <button className="btn_dark">Enviar</button>
           </span>

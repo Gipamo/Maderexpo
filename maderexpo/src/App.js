@@ -11,18 +11,12 @@ import Map from './components/Mapa'
 import Glosary from './components/Glosary'
 import PQRs from'./components/PQRs'
 import PQRsCrud from'./components/PQRsCrud'
-import './App.css'; 
-import { Switch, Route,Link } from 'react-router-dom'
-import{
-  useFirebaseApp
-} from 'reactfire';
+import { Switch, Route } from 'react-router-dom'
 
 
 //poner la ruta del componente encima de la start para que funcione correctamente
 
 function App() {
-  const firebase=useFirebaseApp();
-
   return (
     <div className="App">
       <Header />

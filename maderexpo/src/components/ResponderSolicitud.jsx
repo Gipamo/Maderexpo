@@ -1,43 +1,37 @@
 import React, { Component } from "react";
+import {db} from '../server/firestore';
 import "../css/ResponderSolicitud.css";
 
 class ResponderSolicitud extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      solicitud: JSON.parse(window.localStorage.getItem("solicitudes")).find(
-        (element) => {
-          return element.inputNombre === this.props.idSolicitud;
-        }
-      ),
-      refRespuesta: React.createRef(),
-      enableResponderClass: "enabled",
+      idSolicitud: props.idSolicitud,
+      solicitud: '',
+      respuesta: '',
+      enableResponderClass: 'enabled',
     };
   }
 
-  respuestasStorage = [];
+  async componentDidMount(){
+    const solicitud = await db.collection('PeticionPQR').doc(this.state.idSolicitud.toString()).get()
+    this.setState({solicitud:solicitud.data()})
+  }
 
+  handleChange = (e) => {
+    const {name,value} = e.target;
+    this.setState({[name]:value});
+  }
   handleSubmit = (e) => {
     e.preventDefault();
-    const { refRespuesta, solicitud } = this.state;
-    this.respuestasStorage.push({
-      correo: solicitud.inputCorreo,
-      subject: `Respuesta a la petición de ${solicitud.inputNombre} sobre ${solicitud.tipoSolicitud}`,
-      body: refRespuesta.current.value,
-    });
-    window.localStorage.setItem(
-      "respuestas",
-      JSON.stringify(this.respuestasStorage)
+    window.open(
+      `mailto:${this.state.solicitud.inputCorreo}?subject=Respuesta a su petición de ${this.state.solicitud.tipoSolicitud}&body=${this.state.respuesta}`
     );
     if (this.state.enableResponderClass === "enabled") {
       this.setState({ enableResponderClass: "disabled" });
     } else if (this.state.enableResponderClass === "disabled") {
       this.setState({ enableResponderClass: "enabled" });
     }
-
-    window.open(
-      `mailto:${this.state.solicitud.inputCorreo}?subject=Respuesta a su petición de ${this.state.solicitud.tipoSolicitud}&body=${this.state.refRespuesta.current.value}`
-    );
   };
   render() {
     return (
@@ -45,13 +39,13 @@ class ResponderSolicitud extends Component {
         <form onSubmit={this.handleSubmit}>
           <span>
             <label htmlFor="respuestaSolicitud">
-              Responder solicitud de {`${this.state.solicitud.inputNombre}`}:
+              Responder solicitud de {`${this.state.solicitud.nombreUsuario}`}:
             </label>
             <input
               className="input"
-              id="respuestaSolicitud"
-              ref={this.state.refRespuesta}
-              name="respuestaSolicitud"
+              id="respuesta"
+              onChange={this.handleChange}
+              name="respuesta"
               placeholder="Ingrese la respuesta a la solicitud"
             ></input>
           </span>

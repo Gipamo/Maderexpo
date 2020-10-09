@@ -1,8 +1,6 @@
-import app from 'firebase/app';
 import  'firebase/auth';
 
-
-export default {
+const firebaseConfig = {
     apiKey: "AIzaSyBzbYGh_yCsAzp6o0ZdPopTQNfKJLYo2MI",
     authDomain: "maderexpo-c5990.firebaseapp.com",
     databaseURL: "https://maderexpo-c5990.firebaseio.com",
@@ -11,4 +9,6 @@ export default {
     messagingSenderId: "741426999751",
     appId: "1:741426999751:web:edd133e1cd231b70ef69e2",
     measurementId: "G-PJ5XK2NPMJ"
-}
+};
+
+export default firebaseConfig;

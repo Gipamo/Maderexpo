@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ResponderSolicitud from "./ResponderSolicitud";
+import {db} from '../server/firestore';
 import "../css/Solicitudes.css";
 
 class Solicitudes extends Component {
@@ -8,10 +9,18 @@ class Solicitudes extends Component {
     this.state = {
       solicitudSeleccionada: false,
       idSolicitud: "",
-      solicitudes: props.solicitudes,
+      solicitudes: [],
+      idSolicitudes: []
     };
   }
-
+  async componentDidMount(){
+    const query = await db.collection('PeticionPQR').get()
+    let solicitudes = []
+    query.forEach(solicitud => {
+      solicitudes.push({solicitud:solicitud.data(),idSolicitud:solicitud.id})
+    })
+    this.setState({solicitudes})
+  }
   handleClick = (e) => {
     e.preventDefault();
     this.setState({
@@ -39,17 +48,17 @@ class Solicitudes extends Component {
             <tbody>
               {this.state.solicitudes.map((solicitud) => {
                 return (
-                  <tr key={solicitud.inputNombre}>
-                    <td>{solicitud.inputNombre}</td>
-                    <td>{solicitud.tipoUsuario}</td>
-                    <td>{solicitud.inputPaises}</td>
-                    <td>{solicitud.tipoSolicitud}</td>
-                    <td>{solicitud.tipoMedida}</td>
-                    <td>{solicitud.inputCorreo}</td>
-                    <td>{solicitud.inputSolicitud}</td>
+                  <tr key={solicitud.solicitud.nombreUsuario}>
+                    <td>{solicitud.solicitud.nombreUsuario}</td>
+                    <td>{solicitud.solicitud.tipoUsuario}</td>
+                    <td>{solicitud.solicitud.pais}</td>
+                    <td>{solicitud.solicitud.tipoSolicitud}</td>
+                    <td>{solicitud.solicitud.medida}</td>
+                    <td>{solicitud.solicitud.correo}</td>
+                    <td>{solicitud.solicitud.solicitud}</td>
                     <td>
                       <button
-                        id={solicitud.inputNombre}
+                        id={solicitud.idSolicitud}
                         onClick={this.handleClick}
                       >
                         Responder
@@ -62,7 +71,7 @@ class Solicitudes extends Component {
           </table>
         </div>
         {this.state.solicitudSeleccionada && (
-          <ResponderSolicitud idSolicitud={this.state.idSolicitud} />
+          <ResponderSolicitud idSolicitud={this.state.idSolicitud}/>
         )}
       </>
     );

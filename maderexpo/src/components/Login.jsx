@@ -38,7 +38,7 @@ function Login(){
                 <button class="btn btn_dark" type="submit" onClick={submit}>Iniciar</button>
                 
                 <div class="links">
-                    <a href="">¿Olvidaste la contraseña?</a>
+                    <a href="/login">¿Olvidaste la contraseña?</a>
                 </div>
             </div>
             }
@@ -46,9 +46,8 @@ function Login(){
                 user &&
                 <>
                 <h1>Ya estas logeando Bienvenido</h1>
-                
                     <PQRScrud></PQRScrud>
-                    <button onClick={logout}>cerrar sesion</button>
+                    <button onClick={logout}>Cerrar Sesión</button>
                 </>
                 
             }
