@@ -12,7 +12,7 @@ class ProductFormulary extends Component {
         espesor:'',
         ancho: '',
         largo:'',
-        comentarios: 'Comentarios adicionales'
+        comentarios: ''
     }
     cleanBoxes = () => {
         this.setState({
@@ -24,7 +24,7 @@ class ProductFormulary extends Component {
             espesor:'',
             ancho: '',
             largo:'',
-            comentarios: 'Comentarios adicionales'
+            comentarios: ''
         });
       };
     handleChange = (e) =>{
@@ -60,7 +60,7 @@ class ProductFormulary extends Component {
                     <input value={this.state.espesor} onChange={this.handleChange} list="Espesor" name="espesor"placeholder="Espesor(mm)" id=""></input>
                     <input value={this.state.ancho} onChange={this.handleChange} list="Ancho" name="ancho"placeholder="Ancho(mm)" id=""></input>
                     <input value={this.state.largo} onChange={this.handleChange} type="number" name="largo" placeholder="Largo(mm)"id=""></input>
-                    <textarea name="comentarios" id="" cols="30" rows="10" placeholder={this.state.comentarios}></textarea>
+                    <input value={this.state.comentarios} onChange={this.handleChange} type="text" name='comentarios' placeholder='Comentarios adicionales'></input>
                     <button className='btn btn_dark'>Enviar datos</button>
                 </form>
             </div>

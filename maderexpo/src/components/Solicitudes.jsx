@@ -7,10 +7,7 @@ class Solicitudes extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      solicitudSeleccionada: false,
-      idSolicitud: "",
       solicitudes: [],
-      idSolicitudes: []
     };
   }
   async componentDidMount(){
@@ -21,13 +18,6 @@ class Solicitudes extends Component {
     })
     this.setState({solicitudes})
   }
-  handleClick = (e) => {
-    e.preventDefault();
-    this.setState({
-      solicitudSeleccionada: true,
-      idSolicitud: e.target.id,
-    });
-  };
   render() {
     return (
       <>
@@ -57,12 +47,7 @@ class Solicitudes extends Component {
                     <td>{solicitud.solicitud.correo}</td>
                     <td>{solicitud.solicitud.solicitud}</td>
                     <td>
-                      <button
-                        id={solicitud.idSolicitud}
-                        onClick={this.handleClick}
-                      >
-                        Responder
-                      </button>
+                    <ResponderSolicitud idSolicitud={solicitud.idSolicitud}/>
                     </td>
                   </tr>
                 );
@@ -70,9 +55,6 @@ class Solicitudes extends Component {
             </tbody>
           </table>
         </div>
-        {this.state.solicitudSeleccionada && (
-          <ResponderSolicitud idSolicitud={this.state.idSolicitud}/>
-        )}
       </>
     );
   }
