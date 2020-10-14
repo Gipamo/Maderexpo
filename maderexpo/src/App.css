@@ -93,6 +93,7 @@ input[type=text] {
 body{
   margin:0;
   background: var(--color-white);
+  min-width: 1050px;
 }
 /*minimo tamaño horizontal*/
 .minWidth{
@@ -135,42 +136,11 @@ body{
   font-family: var(--title);
   font-size: 20px;
 }
-.navBar a:hover{
+.navBar_item:hover{
   background-size: 100% 2px;
 }
 
-.grid{
-  display: grid;
-  width: 100%;
-  height: 100%;
-  grid-template-areas: "left main rigth";
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 70px 1fr 1fr;
-  grid-column-gap: 20px;   
-  margin: 0; 
-}
 
-.grid1{
-  text-align: center;
-}
-
-.grid2{
-  text-align: justify;
-}
-
-.grid3{
-  text-align: justify;
-  margin-top: 80px;
-}
-
-#historyback{
-  margin-top: 80px;
-}
-
-
-.history{
-  margin-right: 20px;
-}
 
 .imagenes{
   float: left;

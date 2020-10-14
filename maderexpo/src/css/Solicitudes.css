@@ -1,8 +1,18 @@
-table {
+.login_table {
   text-align: center;
   width: 100%;
   border-spacing: 3rem;
 }
-tr th {
+.login_table tr th {
   margin-bottom: 2em;
+}
+.login_table tr td{
+  border: 1px solid #F2E8B3;
+}
+.login_table th{
+  background:#F2D544;
+}
+.table_button{
+  display: flex;
+  flex-direction: column;
 }

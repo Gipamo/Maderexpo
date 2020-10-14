@@ -1,7 +1,7 @@
 .gridempezar{
     width: 100%;
     display:grid;
-    grid-template-columns: .2fr .5fr 1fr;
+    grid-template-columns: .2fr .8fr 1fr;
     grid-template-rows: .5fr .3fr 1fr;
     overflow: hidden;
 }
@@ -25,4 +25,5 @@
 }
 .slogan h1{
     color: #F2F2F2;
+    font-size: 200%;
 }

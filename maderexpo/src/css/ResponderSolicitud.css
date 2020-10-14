@@ -1,0 +1,19 @@
+.form_btn_answer{
+    width: 100%;
+    align-items: center;
+    margin:0;
+    padding: 0;
+}
+.btn_answer_solicitud{
+    align-self: center;
+}
+.form_btn_answer label{
+    font-size: 15px;
+    align-self: center;
+    margin-right: 0;
+}
+.form_btn_answer input{
+    background-color: white;
+    align-self: center;
+    width: 100%;
+}

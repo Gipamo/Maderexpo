@@ -1,11 +1,19 @@
 
 /* COMPROMISO AMBIENTAL STYLES */
-ul {
+.compromise_list {
   list-style: none;
+  padding-left: 15px;
 }
-li::before {
+.compromise_list li{
+  padding: 10px 0px;
+}
+.compromise_list span::before {
   font-family: FontAwesome;
   content: "\f00c";
   color: var(--color-yellow-dark);
-  margin-right: 10px;
+  padding-right: 10px;
+}
+.compromise_list span{
+  text-align: left !important;
+  justify-content: flex-start;
 }

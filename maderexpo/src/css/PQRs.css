@@ -1,4 +1,4 @@
-h3 {
+.pqr_title{
   text-align: center;
   padding-top: 3rem;
 }
@@ -18,6 +18,17 @@ select {
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: 1fr;
   justify-content: center;
+  background-color: #F2E8B3;
+  padding: 3rem;
+  width: 80%;
+}
+.pqrForm .inputs_width{
+  width: 50%;
+  margin-left: 0;
+  margin-right: 0;
+}
+.pqrForm .inputs_white{
+  background-color: #F2F2F2;
 }
 span {
   text-align: center;
