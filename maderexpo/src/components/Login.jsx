@@ -23,20 +23,17 @@ function Login(){
     const logout=async()=>{
         await firebase.auth().signOut();
     }
-    
 
     return(
         <section id="signIn">
             {
                 !user &&
-            
-            <div>
+            <div class="signIn_form">
                 <h1>INICIAR SESIÓN</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <input type="email" placeholder="user@email.com" id="email" onChange={(ev=> setEmail(ev.target.value))}></input>
                 <input type="password" id="password" placeholder="password" onChange={(ev=> setPassword(ev.target.value))}></input>
                 <button class="btn btn_dark" type="submit" onClick={submit}>Iniciar</button>
-                
                 <div class="links">
                     <a href="/login">¿Olvidaste la contraseña?</a>
                 </div>
@@ -45,11 +42,14 @@ function Login(){
             {
                 user &&
                 <>
-                <h1>Ya estas logeando Bienvenido</h1>
+                <section class="login_logeado">
+                    <div class="part1">
+                        <h1 class="title_name">Ya estas logeando <br></br>Bienvenido</h1>
+                        <button class="btn btn_light"onClick={logout}>Cerrar Sesión</button>
+                    </div>
                     <PQRScrud></PQRScrud>
-                    <button onClick={logout}>Cerrar Sesión</button>
+                </section>
                 </>
-                
             }
         </section>
     )

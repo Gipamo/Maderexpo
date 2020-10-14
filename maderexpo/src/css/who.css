@@ -2,12 +2,14 @@
   min-width: 1000px;
 }
 .who_minWidth{
+  padding-top: 20px;
   display: grid;
-  width: 100%;
+  width: 90%;
   height: 100%;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 70px 1fr;
-  grid-column-gap: 100px;
+  grid-column-gap: 80px;
+  margin:auto;
 }
 .grid_title{
   text-align: center;
@@ -20,11 +22,12 @@
 
 .Mision_vision h3{
   background: #F2E8B3;
-  padding-left: 10px;
   border-radius: 5px;
+  text-align: center;
 }
-.history p{
+.grid p , .grid aside{
+  width: 100%;
   text-align: justify;
-  margin-right: 10px;
+  justify-self: center;
 }
 

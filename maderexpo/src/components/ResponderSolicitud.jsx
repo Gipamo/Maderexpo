@@ -49,14 +49,15 @@ class ResponderSolicitud extends Component {
   render() {
     return (
       <>
-      <button id={this.state.idSolicitud} onClick={this.handleClick}>
+      <button class="btn btn_light btn_answer_solicitud"id={this.state.idSolicitud} onClick={this.handleClick}>
         Responder
       </button>
       <div className={`${this.state.enableResponderClass}`}>
-        <form onSubmit={this.handleSubmit}>
+        <form class="form_btn_answer"onSubmit={this.handleSubmit}>
           <span>
             <label htmlFor="respuestaSolicitud">
-              Responder solicitud de {`${this.state.solicitud.nombreUsuario}`}:
+              {/* Responder solicitud de {`${this.state.solicitud.nombreUsuario}`}: */}
+              Responder solicitud:
             </label>
             <input
               className="input"
@@ -67,7 +68,7 @@ class ResponderSolicitud extends Component {
               placeholder="Ingrese la respuesta a la solicitud"
             ></input>
           </span>
-          <button>Enviar respuesta</button>
+          <button class="btn btn_dark">Enviar respuesta</button>
         </form>
       </div>
       </>

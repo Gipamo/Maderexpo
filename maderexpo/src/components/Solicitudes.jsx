@@ -22,7 +22,7 @@ class Solicitudes extends Component {
     return (
       <>
         <div>
-          <table>
+          <table class="login_table">
             <thead>
               <tr>
                 <th>Nombre</th>
@@ -46,7 +46,7 @@ class Solicitudes extends Component {
                     <td>{solicitud.solicitud.medida}</td>
                     <td>{solicitud.solicitud.correo}</td>
                     <td>{solicitud.solicitud.solicitud}</td>
-                    <td>
+                    <td class="table_button">
                     <ResponderSolicitud idSolicitud={solicitud.idSolicitud}/>
                     </td>
                   </tr>

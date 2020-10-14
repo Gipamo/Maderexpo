@@ -84,13 +84,13 @@ class PQRs extends Component {
   render() {
     return (
       <div>
-        <h3 className="title">Realiza tu petición</h3>
+        <h3 className="title pqr_title">Realiza tu petición</h3>
         <form className="pqrForm" onSubmit={this.handleSubmit}>
           <span>
             <label className="subtitle" htmlFor="pais">
               Seleccione un tipo de persona:
             </label>
-            <select id="tipoUsuario" name="tipoUsuario" onChange={this.handleChange}>
+            <select id="tipoUsuario" name="tipoUsuario"  class="inputs_width" onChange={this.handleChange}>
               <option value="Natural">Natural</option>
               <option value="Juridica">Juridica</option>
             </select>
@@ -102,7 +102,7 @@ class PQRs extends Component {
             </label>
             <input
               id="nombre"
-              className="input inputNombre"
+              className="input inputNombre inputs_width inputs_white"
               name="nombreUsuario"
               onChange={this.handleChange}
               placeholder={`Introduce el nombre de la${
@@ -115,7 +115,7 @@ class PQRs extends Component {
             <label className="subtitle" htmlFor="pais">
               Seleccione un país:
             </label>
-            <select id="pais" name="pais" id="countryId" onChange={this.handleChange}>
+            <select id="pais" name="pais" id="countryId" class="inputs_width" onChange={this.handleChange}>
               {this.state.paises.map((pais) => {
                 return (
                   <option key={pais.name} value={pais.name}>
@@ -132,6 +132,7 @@ class PQRs extends Component {
             <select
               id="peticion"
               name="tipoSolicitud"
+              class="inputs_width"
               onChange={this.handleChange}
             >
               {this.tipoSolicitudes.map((solicitud) => {
@@ -169,7 +170,7 @@ class PQRs extends Component {
             <input
               id="correo"
               name="correo"
-              className="input"
+              className="input inputs_width inputs_white"
               placeholder="Ingrese un correo electrónico"
               type="email"
               onChange={this.handleChange}
@@ -179,13 +180,13 @@ class PQRs extends Component {
           <span>
             <input
               id="solicitud"
-              className="solicitudInput"
+              className="solicitudInput inputs_white"
               name="solicitud"
               onChange={this.handleChange}
               placeholder="Introduzca su solicitud detalladamente"
               value={this.state.solicitud}
             ></input>
-            <button className="btn_dark">Enviar</button>
+            <button className="btn btn_dark">Enviar</button>
           </span>
         </form>
       </div>

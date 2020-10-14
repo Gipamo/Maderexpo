@@ -11,6 +11,7 @@ import Map from './components/Mapa'
 import Glosary from './components/Glosary'
 import PQRs from'./components/PQRs'
 import PQRsCrud from'./components/PQRsCrud'
+import Question from './components/PreguntasFrecuentes'
 import { Switch, Route } from 'react-router-dom'
 
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/productform" component={ProductFormulary}/>
           <Route path="/map" component={Map}/>
           <Route path="/Glosary" component={Glosary}/>
+          <Route path="/question" component={Question}/>
           <Route path="/pqrs" component={PQRs} />
           <Route path="/pqrscrud" component={PQRsCrud} />
           <Route path="/" component={Start}/>

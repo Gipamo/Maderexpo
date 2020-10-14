@@ -24,9 +24,9 @@
     min-width: 900px;
     min-height: 400px;
 }
-#signIn div:nth-child(1){
+.signIn_form{
     width: 40%;
-    height: 70%;
+    height: 80%;
     background-color: var(--color-yellow);
     display: flex;
     flex-direction: column;
@@ -40,13 +40,13 @@
     background-color: var(--color-white);
 }
 /* Configuración tamaño y fuente de los elementos del div principal */
-#signIn div > *{
+.signIn_form > *{
     width: 60%;
     font-size: 18px;
     font-family: var(--paragraph);
 }
 /* Titulo */
-#signIn div h1{
+.signIn_form h1{
     font-size: 45px;
     font-family: var(--title-name);
     text-align: center;
@@ -55,7 +55,7 @@ h1{
     color: var(--color-black);
 }
 /* Parrafo */
-#signIn div p{
+.signIn_form p{
     text-align: center;
 }
 /* inputs */
@@ -86,9 +86,18 @@ button{
     transition: background-size .3s;
     color: var(--color-gray);
 }
-.links a:hover{
+.signIn_form .links a:hover{
     background-size: 100% 2px;
 }
-#signIn .links{
+.signIn_form .links{
     justify-content: flex-start;
+}
+
+/*después de estar logueado*/
+.login_logeado{
+    width: 90%;
+}
+.login_logeado .part1{
+    display: flex;
+    justify-content: space-between;
 }

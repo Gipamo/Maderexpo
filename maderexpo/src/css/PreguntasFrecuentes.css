@@ -1,0 +1,111 @@
+
+.abc{
+    display:flex;
+    justify-content: space-around;
+    background: #F2D544;
+}
+.abc button{
+    background: #F2D544;
+    border:none;
+    text-transform: uppercase;
+    width: 2em;
+}
+.abc button:hover{
+    background:#F2F2F2;
+}
+#frecuent .title{
+    text-align: center;
+}
+#frecuent .search{
+    display:flex;
+}
+#frecuent input[type="search"]{
+    width: 100%;
+    background: #F2E8B3;
+}
+#frecuent input[type="button"]{
+    transition: .5s;
+}
+#frecuent input[type="button"]:hover{
+    transform: scale(.95);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+.item a{
+    width: auto;
+    text-decoration: none;
+    transition: 1s;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+    color:  blueviolet;
+    float: right;
+}
+.item a:hover{
+    background-size: 100% 2px;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #F2E8B3;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 1s;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  #panel {
+    padding: 0 18px;
+    background-color: #eee;
+    margin-bottom: 5px;
+    
+  }
+  #panel1 {
+    padding: 0 18px;
+    background-color: #eee;
+    margin-bottom: 5px;
+    
+  }
+  #panel2 {
+    padding: 0 18px;
+    background-color: #eee;
+    margin-bottom: 5px;
+    
+  }
+  #panel3 {
+    padding: 0 18px;
+    background-color: #eee;
+    margin-bottom: 5px;
+    
+  }
+  #panel4 {
+    padding: 0 18px;
+    background-color: #eee;
+    margin-bottom: 5px;
+    
+  }
+  #panel5 {
+    padding: 0 18px;
+    background-color: #eee;
+    margin-bottom: 5px;
+    
+  }
+
+

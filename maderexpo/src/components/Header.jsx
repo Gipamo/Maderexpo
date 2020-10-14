@@ -12,22 +12,22 @@ function Header() {
         <h1 className="title_name">MADEREXPO</h1>
         <div className="navBar">
           <Link to="/">
-            <a href="">Inicio</a>
+            <a href="" class="navBar_item">Inicio</a>
           </Link>
           <Link to="/who">
-            <a href="">Nuestras Operaciones</a>
+            <a href="" class="navBar_item">Nuestras Operaciones</a>
           </Link>
           <Link to="/compromise">
-            <a href="">Desarrollo Sostenible</a>
+            <a href="" class="navBar_item">Desarrollo Sostenible</a>
           </Link>
           <Link to="/product">
-            <a href="">Nuestro Producto</a>
+            <a href="" class="navBar_item">Nuestro Producto</a>
           </Link>
           <Link to="/relation">
-            <a href="">Relacionate con nosotros</a>
+            <a href="" class="navBar_item">Relacionate con nosotros</a>
           </Link>
           <Link to="/login">
-            <a href="">Iniciar Sesion</a>
+            <a href="" class="navBar_item">Iniciar Sesion</a>
           </Link>
         </div>
       </div>
