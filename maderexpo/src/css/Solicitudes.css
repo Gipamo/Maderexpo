@@ -16,3 +16,6 @@
   display: flex;
   flex-direction: column;
 }
+.table_button > button:nth-child(1){
+  padding: 0px 20px;
+}

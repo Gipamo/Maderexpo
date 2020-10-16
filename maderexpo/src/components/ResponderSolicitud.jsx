@@ -7,6 +7,7 @@ class ResponderSolicitud extends Component {
     super(props);
     this.state = {
       idSolicitud: props.idSolicitud,
+      tabla: props.nombreTabla,
       solicitud: '',
       respuesta: '',
       enableResponderClass: 'disabled',
@@ -20,7 +21,7 @@ class ResponderSolicitud extends Component {
     }
   }
   async componentDidMount(){
-    const solicitud = await db.collection('PeticionPQR').doc(this.state.idSolicitud.toString()).get()
+    const solicitud = await db.collection(`Peticion${this.state.tabla}`).doc(this.state.idSolicitud.toString()).get()
     this.setState({solicitud:solicitud.data()})
   }
   cleanBoxes = () => {
@@ -56,18 +57,25 @@ class ResponderSolicitud extends Component {
         <form class="form_btn_answer"onSubmit={this.handleSubmit}>
           <span>
             <label htmlFor="respuestaSolicitud">
-              {/* Responder solicitud de {`${this.state.solicitud.nombreUsuario}`}: */}
-              Responder solicitud:
+              Responder solicitud de {`${this.state.solicitud.nombreUsuario}`}:
             </label>
-            <input
+            {/* <input
               className="input"
               id="respuesta"
               value={this.state.respuesta}
               onChange={this.handleChange}
               name="respuesta"
               placeholder="Ingrese la respuesta a la solicitud"
-            ></input>
+            ></input> */}
           </span>
+          <textarea
+            name="respuesta"
+            className="input"
+            id="respuesta"
+            value={this.state.respuesta}
+            onChange={this.handleChange}
+            placeholder="Ingrese la respuesta a la solicitud">
+          </textarea>
           <button class="btn btn_dark">Enviar respuesta</button>
         </form>
       </div>

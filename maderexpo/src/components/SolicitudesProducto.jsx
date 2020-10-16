@@ -11,7 +11,7 @@ class Solicitudes extends Component {
     };
   }
   async componentDidMount(){
-    const query = await db.collection('PeticionPQR').get()
+    const query = await db.collection('PeticionProducto').get()
     let solicitudes = []
     query.forEach(solicitud => {
       solicitudes.push({solicitud:solicitud.data(),idSolicitud:solicitud.id})
@@ -21,19 +21,21 @@ class Solicitudes extends Component {
   render() {
     return (
       <>
-      <h2>PQR y otros requerimientos</h2>
-        <div>
+      <h2>Interesados en Producto</h2>
+      <div>
           <table class="login_table">
             <thead>
               <tr>
-                <th>Nombre</th>
-                <th>Tipo Persona</th>
-                <th>País</th>
-                <th>Tipo Solicitud</th>
-                <th>Medida</th>
+                <th>Nombre Persona</th>
+                <th>Nombre Empresa</th>
                 <th>Correo</th>
+                <th>País</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+                <th>Ancho</th>
+                <th>Largo</th>
+                <th>Espesor</th>
                 <th>Descripción</th>
-                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -41,14 +43,17 @@ class Solicitudes extends Component {
                 return (
                   <tr key={solicitud.solicitud.nombreUsuario}>
                     <td>{solicitud.solicitud.nombreUsuario}</td>
-                    <td>{solicitud.solicitud.tipoUsuario}</td>
-                    <td>{solicitud.solicitud.pais}</td>
-                    <td>{solicitud.solicitud.tipoSolicitud}</td>
-                    <td>{solicitud.solicitud.medida}</td>
+                    <td>{solicitud.solicitud.nombreEmpresa}</td>
                     <td>{solicitud.solicitud.correo}</td>
-                    <td>{solicitud.solicitud.solicitud}</td>
+                    <td>{solicitud.solicitud.pais}</td>
+                    <td>{solicitud.solicitud.telefono}</td>
+                    <td>{solicitud.solicitud.correo}</td>
+                    <td>{solicitud.solicitud.ancho}</td>
+                    <td>{solicitud.solicitud.largo}</td>
+                    <td>{solicitud.solicitud.espesor}</td>
+                    <td>{solicitud.solicitud.comentarios}</td>
                     <td class="table_button">
-                    <ResponderSolicitud idSolicitud={solicitud.idSolicitud} nombreTabla="PQR"/>
+                    <ResponderSolicitud idSolicitud={solicitud.idSolicitud} nombreTabla="Producto"/>
                     </td>
                   </tr>
                 );

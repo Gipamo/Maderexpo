@@ -7,7 +7,7 @@ function Header() {
     <header className="App-header">
       <div className="header minWidth">
         <div className="language">
-          <button class="btn btn_dark">Language</button>
+          <div class="btn" id="google_translate_element"></div>
         </div>
         <h1 className="title_name">MADEREXPO</h1>
         <div className="navBar">

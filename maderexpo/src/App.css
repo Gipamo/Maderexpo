@@ -105,20 +105,50 @@ body{
   flex-direction: column;
   align-items: center;
 }
-.header div{
-  width: 100%;
-}
 .header > .language{
   background-color: var(--color-black);
+  width: 100%;
 }
-.header > .language > button{
+.header > .language > #google_translate_element{
   float: right;
+  padding:0;
+  display: flex;
+  flex-direction: row;
 }
+.goog-te-gadget {
+  font-family: var(--title);
+  text-transform: uppercase;
+  color:white
+}
+.goog-te-gadget-simple  {
+  background-color: rgba(255,255,255,0.20)!important;
+  padding: 8px!important;
+  border-radius: 4px!important;
+  font-size: 1rem!important;
+  line-height:2rem!important;
+  border:none !important;
+}
+.goog-te-menu-value{
+  color: var(--color-white) !important;
+}
+.goog-te-gadget-icon{
+  display: none;
+}
+.goog-te-menu-value span{
+  display: initial;
+}
+.goog-te-menu-value:hover{
+  text-decoration: none !important;
+}
+.goog-te-banner-frame.skiptranslate {display: none!important;}
+
+body {top: 0px!important;}
 .navBar{
   display: flex;
   justify-content: space-around;
   background-color: var(--color-yellow);
   padding: 15px 0px;
+  width: 100%;
 }
 #position{
   color: var(--color-white);

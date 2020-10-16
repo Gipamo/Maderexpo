@@ -3,6 +3,7 @@ import 'firebase/auth';
 import {useFirebaseApp, useUser} from 'reactfire';
 import '../css/login.css'
 import PQRScrud  from './PQRsCrud'
+import SolicitudesProducto from './SolicitudesProducto';
 
 
 
@@ -42,12 +43,13 @@ function Login(){
             {
                 user &&
                 <>
-                <section class="login_logeado">
+                <section class="login_logeado" translate="no">
                     <div class="part1">
-                        <h1 class="title_name">Ya estas logeando <br></br>Bienvenido</h1>
+                        <h1 class="title_name" translate="no">Ya estas logeado <br></br>Bienvenido</h1>
                         <button class="btn btn_light"onClick={logout}>Cerrar Sesión</button>
                     </div>
                     <PQRScrud></PQRScrud>
+                    <SolicitudesProducto></SolicitudesProducto>
                 </section>
                 </>
             }
