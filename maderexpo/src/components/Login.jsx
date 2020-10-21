@@ -3,6 +3,7 @@ import 'firebase/auth';
 import {useFirebaseApp, useUser} from 'reactfire';
 import '../css/login.css'
 import PQRScrud  from './PQRsCrud'
+import SolicitudesProducto from './SolicitudesProducto';
 
 
 
@@ -30,7 +31,6 @@ function Login(){
                 !user &&
             <div class="signIn_form">
                 <h1>INICIAR SESIÓN</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <input type="email" placeholder="user@email.com" id="email" onChange={(ev=> setEmail(ev.target.value))}></input>
                 <input type="password" id="password" placeholder="password" onChange={(ev=> setPassword(ev.target.value))}></input>
                 <button class="btn btn_dark" type="submit" onClick={submit}>Iniciar</button>
@@ -42,12 +42,14 @@ function Login(){
             {
                 user &&
                 <>
-                <section class="login_logeado">
+                <section class="login_logeado" translate="no">
                     <div class="part1">
-                        <h1 class="title_name">Ya estas logeando <br></br>Bienvenido</h1>
-                        <button class="btn btn_light"onClick={logout}>Cerrar Sesión</button>
+                        <h1 class="title_name" translate="no">Ya estas logeado <br></br>Bienvenido</h1>
+                        <button class="btn btn_dark"onClick={logout}>Cerrar Sesión</button>
                     </div>
                     <PQRScrud></PQRScrud>
+                    <br/>
+                    <SolicitudesProducto></SolicitudesProducto>
                 </section>
                 </>
             }

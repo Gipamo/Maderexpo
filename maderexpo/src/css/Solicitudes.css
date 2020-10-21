@@ -1,18 +1,21 @@
 .login_table {
-  text-align: center;
   width: 100%;
   border-spacing: 3rem;
 }
-.login_table tr th {
-  margin-bottom: 2em;
-}
-.login_table tr td{
-  border: 1px solid #F2E8B3;
+.login_table td{
+  border-right: 1px solid #F2E8B3;
+  padding-left: 10px;
+  text-align: left;
 }
 .login_table th{
   background:#F2D544;
+  text-align: center;
 }
 .table_button{
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid #F2E8B3;
+}
+.table-border-top{
+  border-top: 1px solid #F2E8B3;
 }

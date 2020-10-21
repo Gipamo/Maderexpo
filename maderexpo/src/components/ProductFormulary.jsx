@@ -50,17 +50,17 @@ class ProductFormulary extends Component {
     render(){
         return (
             <div >
-                <form className="card" onSubmit={this.handleSubmit}>
-                    <h1 className="titulo-form">Formulario de productos</h1>
-                    <input value={this.state.nombreUsuario} onChange={this.handleChange} type="text" name="nombreUsuario" id="" placeholder="Nombre Completo"></input>
-                    <input value={this.state.nombreEmpresa} onChange={this.handleChange} type="text" name="nombreEmpresa" placeholder="Nombre Empresa" id=""></input>
-                    <input value={this.state.pais} onChange={this.handleChange} list="Countries" name="pais" placeholder="Pais"id=""></input>
-                    <input value={this.state.correo} onChange={this.handleChange} type="email" name="correo" placeholder="Correo Electronico"id=""></input>
-                    <input value={this.state.telefono} onChange={this.handleChange} type="text" name="telefono" placeholder="Telefono"id=""></input>
-                    <input value={this.state.espesor} onChange={this.handleChange} list="Espesor" name="espesor"placeholder="Espesor(mm)" id=""></input>
-                    <input value={this.state.ancho} onChange={this.handleChange} list="Ancho" name="ancho"placeholder="Ancho(mm)" id=""></input>
-                    <input value={this.state.largo} onChange={this.handleChange} type="number" name="largo" placeholder="Largo(mm)"id=""></input>
-                    <input value={this.state.comentarios} onChange={this.handleChange} type="text" name='comentarios' placeholder='Comentarios adicionales'></input>
+                <h1 className="title pqr_title">Formulario de productos</h1>
+                <form className="pqrForm" onSubmit={this.handleSubmit}>
+                     <span className="mb-3"><label htmlFor="nombre" className="subtitle">Ingrese su nombre:</label> <input className='input inputs_width inputs_white' value={this.state.nombreUsuario} onChange={this.handleChange} type="text" name="nombreUsuario" id="" placeholder="Nombre Completo"></input></span>
+                     <span className="mb-3"><label htmlFor="empresa" className="subtitle">Ingrese el nombre de su la empresa:</label> <input className='input inputs_width inputs_white' value={this.state.nombreEmpresa} onChange={this.handleChange} type="text" name="nombreEmpresa" placeholder="Nombre Empresa" id=""></input></span>
+                     <span className="mb-3"><label htmlFor="pais" className="subtitle">Seleccione un pais:</label> <input className='input inputs_width inputs_white' value={this.state.pais} onChange={this.handleChange} list="Countries" name="pais" placeholder="Pais"id=""></input></span>
+                     <span className="mb-3"><label htmlFor="correo" className="subtitle">Digite un correo electrónico:</label> <input className='input inputs_width inputs_white' value={this.state.correo} onChange={this.handleChange} type="email" name="correo" placeholder="Correo Electronico"id=""></input></span>
+                     <span className="mb-3"><label htmlFor="telefono" className="subtitle">Digite un telefono:</label> <input className='input inputs_width inputs_white' value={this.state.telefono} onChange={this.handleChange} type="text" name="telefono" placeholder="Telefono"id=""></input></span>
+                     <span className="mb-3"><label htmlFor="espesor" className="subtitle">Digite el espesor de la madera:</label> <input className='input inputs_width inputs_white' value={this.state.espesor} onChange={this.handleChange} list="Espesor" name="espesor"placeholder="Espesor(mm)" id=""></input></span>
+                     <span className="mb-3"><label htmlFor="ancho" className="subtitle">Digite el ancho de la madera:</label> <input className='input inputs_width inputs_white' value={this.state.ancho} onChange={this.handleChange} list="Ancho" name="ancho"placeholder="Ancho(mm)" id=""></input></span>
+                     <span className="mb-3"><label htmlFor="largo" className="subtitle">Digite el largo de la madera:</label> <input className='input inputs_width inputs_white' value={this.state.largo} onChange={this.handleChange} type="number" name="largo" placeholder="Largo(mm)"id=""></input></span>
+                     <span className="mb-3"> <textarea className='solicitudInput inputs_white' value={this.state.comentarios} onChange={this.handleChange} type="text" name='comentarios' placeholder='Comentarios adicionales'></textarea></span>
                     <button className='btn btn_dark'>Enviar datos</button>
                 </form>
             </div>

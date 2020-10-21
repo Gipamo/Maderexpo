@@ -186,8 +186,8 @@ class PQRs extends Component {
               placeholder="Introduzca su solicitud detalladamente"
               value={this.state.solicitud}
             ></input>
-            <button className="btn btn_dark">Enviar</button>
           </span>
+          <button className="btn btn_dark">Enviar</button>
         </form>
       </div>
     );
