@@ -51,6 +51,7 @@ class ProductFormulary extends Component {
         return (
             <div >
                 <h1 className="title pqr_title">Formulario de productos</h1>
+                <h3 className="title pqr_title">En este formulario podras realizar preguntas acerca del producto que ofrecemos</h3>
                 <form className="pqrForm" onSubmit={this.handleSubmit}>
                      <span className="mb-3"><label htmlFor="nombre" className="subtitle">Ingrese su nombre:</label> <input className='input inputs_width inputs_white' value={this.state.nombreUsuario} onChange={this.handleChange} type="text" name="nombreUsuario" id="" placeholder="Nombre Completo"></input></span>
                      <span className="mb-3"><label htmlFor="empresa" className="subtitle">Ingrese el nombre de su la empresa:</label> <input className='input inputs_width inputs_white' value={this.state.nombreEmpresa} onChange={this.handleChange} type="text" name="nombreEmpresa" placeholder="Nombre Empresa" id=""></input></span>
