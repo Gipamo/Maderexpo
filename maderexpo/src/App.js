@@ -12,6 +12,7 @@ import Glosary from './components/Glosary'
 import PQRs from'./components/PQRs'
 import PQRsCrud from'./components/PQRsCrud'
 import Question from './components/PreguntasFrecuentes'
+import Estadisticas from './components/Estadisticas'
 import { Switch, Route } from 'react-router-dom'
 
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/question" component={Question}/>
           <Route path="/pqrs" component={PQRs} />
           <Route path="/pqrscrud" component={PQRsCrud} />
+          <Route path="/estadisticas" component={Estadisticas}/>
           <Route path="/" component={Start}/>
   
       </Switch>

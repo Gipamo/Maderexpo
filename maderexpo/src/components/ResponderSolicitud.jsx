@@ -10,6 +10,7 @@ class ResponderSolicitud extends Component {
       solicitud: '',
       respuesta: '',
       enableResponderClass: 'disabled',
+      nombreTabla:props.nombreTabla
     };
   }
   handleClick = (e) =>{
@@ -20,8 +21,8 @@ class ResponderSolicitud extends Component {
     }
   }
   async componentDidMount(){
-    const solicitud = await db.collection('PeticionPQR').doc(this.state.idSolicitud.toString()).get()
-    this.setState({solicitud:solicitud.data()})
+    const solicitud = await db.collection(`Peticion${this.state.nombreTabla}`).doc(this.state.idSolicitud.toString()).get()
+    this.setState({solicitud:solicitud.data()});
   }
   cleanBoxes = () => {
     this.setState({
@@ -37,7 +38,7 @@ class ResponderSolicitud extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     window.open(
-      `mailto:${this.state.solicitud.correo}?subject=Respuesta a su petición de ${this.state.solicitud.tipoSolicitud}&body=${this.state.respuesta}`
+      `mailto:${this.state.solicitud.correo}?subject=Respuesta a su petición de ${this.state.solicitud.tipoSolicitud||"Producto"}&body=${this.state.respuesta}`
     );
     if (this.state.enableResponderClass === "enabled") {
       this.setState({ enableResponderClass: "disabled" });
@@ -49,11 +50,11 @@ class ResponderSolicitud extends Component {
   render() {
     return (
       <>
-      <button class="btn btn_light btn_answer_solicitud"id={this.state.idSolicitud} onClick={this.handleClick}>
+      <button class="btn btn_light btn_answer_solicitud" onClick={this.handleClick}>
         Responder
       </button>
       <div className={`${this.state.enableResponderClass}`}>
-        <form class="form_btn_answer"onSubmit={this.handleSubmit}>
+        <form class="form_btn_answer" onSubmit={this.handleSubmit}>
           <span>
             <label htmlFor="respuestaSolicitud">
               {/* Responder solicitud de {`${this.state.solicitud.nombreUsuario}`}: */}
@@ -68,7 +69,7 @@ class ResponderSolicitud extends Component {
               placeholder="Ingrese la respuesta a la solicitud"
             ></input>
           </span>
-          <button class="btn btn_dark">Enviar respuesta</button>
+          <button type='submit' class="btn btn_dark">Enviar respuesta</button>
         </form>
       </div>
       </>

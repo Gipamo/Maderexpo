@@ -23,13 +23,13 @@ class Solicitudes extends Component {
       <>
       <h2>PQR y otros requerimientos</h2>
         <div>
-          <table class="login_table subtitle">
+          <table className="login_table subtitle">
             {this.state.solicitudes.map((solicitud) => {
               return (
                 <>
                 <tr>
                   <th>Nombre</th>
-                  <td class="table-border-top">{solicitud.solicitud.nombreUsuario}</td>
+                  <td className="table-border-top">{solicitud.solicitud.nombreUsuario}</td>
                 </tr>
                 <tr>
                   <th>Tipo persona</th>
@@ -57,7 +57,7 @@ class Solicitudes extends Component {
                 </tr>
                 <tr>
                   <th></th>
-                  <td class="table_button">
+                  <td className="table_button">
                     <ResponderSolicitud idSolicitud={solicitud.idSolicitud} nombreTabla="PQR"/>
                   </td>
                 </tr>

@@ -6,13 +6,13 @@ import bosque from '../img/Bosque.png'
 function Start(){
 
     return(
-        <div class="gridempezar">
-            <div class="slogan">
-                <h1 class="title">Madera Teca sostenible y de la mejor calidad
+        <div className="gridempezar">
+            <div className="slogan">
+                <h1 className="title">Madera Teca sostenible y de la mejor calidad
                                     Moderna, sostenible y de fácil manipulación
                 </h1>
             </div>
-            <img src={bosque} alt="" class="img_complete"></img>
+            <img src={bosque} alt="" className="img_complete"></img>
         </div>
     )
 }

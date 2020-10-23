@@ -16,6 +16,7 @@ class Solicitudes extends Component {
     query.forEach(solicitud => {
       solicitudes.push({solicitud:solicitud.data(),idSolicitud:solicitud.id})
     })
+    console.log(solicitudes)
     this.setState({solicitudes})
   }
   render() {
@@ -23,13 +24,13 @@ class Solicitudes extends Component {
       <>
       <h2>Interesados en el Producto</h2>
       <div>
-          <table class="login_table subtitle">
+          <table className="login_table subtitle">
             {this.state.solicitudes.map((solicitud) => {
               return (
                 <>
                 <tr>
                   <th>Nombre Persona</th>
-                  <td class="table-border-top">{solicitud.solicitud.nombreUsuario}</td>
+                  <td className="table-border-top">{solicitud.solicitud.nombreUsuario}</td>
                 </tr>
                 <tr>
                   <th>Nombre Empresa</th>
@@ -65,7 +66,7 @@ class Solicitudes extends Component {
                 </tr>
                 <tr>
                   <th></th>
-                  <td class="table_button">
+                  <td className="table_button">
                     <ResponderSolicitud idSolicitud={solicitud.idSolicitud} nombreTabla="Producto"/>
                   </td>
                 </tr>
