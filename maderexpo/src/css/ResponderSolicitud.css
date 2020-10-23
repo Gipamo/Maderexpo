@@ -1,19 +1,26 @@
 .form_btn_answer{
-    width: 100%;
     align-items: center;
-    margin:0;
-    padding: 0;
+    padding: 20px 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #F2D544;
+    border: 1px solid #0D0D0D;
+    box-shadow: 2px 4px 5px #0D0D0D;
 }
 .btn_answer_solicitud{
     align-self: center;
 }
 .form_btn_answer label{
-    font-size: 15px;
+    font-size: 2rem;
     align-self: center;
-    margin-right: 0;
+    margin: 0;
 }
-.form_btn_answer input{
+.form_btn_answer textarea{
     background-color: white;
     align-self: center;
-    width: 100%;
+    width: 80%;
+    height: 60%;
 }
