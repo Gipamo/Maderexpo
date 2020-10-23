@@ -7,6 +7,7 @@ class ProductFormulary extends Component {
         nombreUsuario: '',
         nombreEmpresa: '',
         pais: '',
+        paises: [],
         correo: '',
         telefono: '',
         espesor:'',
@@ -47,6 +48,13 @@ class ProductFormulary extends Component {
         await db.collection('PeticionProducto').doc().set({...peticionProducto});
         this.cleanBoxes.apply();
     }
+
+    async componentDidMount() {
+        const response = await fetch("https://restcountries.eu/rest/v2/all");
+        const data = await response.json();
+        this.setState({ paises: data });
+      }
+
     render(){
         return (
             <div >
@@ -55,7 +63,20 @@ class ProductFormulary extends Component {
                 <form className="pqrForm" onSubmit={this.handleSubmit}>
                      <span className="mb-3"><label htmlFor="nombre" className="subtitle">Ingrese su nombre:</label> <input className='input inputs_width inputs_white' value={this.state.nombreUsuario} onChange={this.handleChange} type="text" name="nombreUsuario" id="" placeholder="Nombre Completo"></input></span>
                      <span className="mb-3"><label htmlFor="empresa" className="subtitle">Ingrese el nombre de su la empresa:</label> <input className='input inputs_width inputs_white' value={this.state.nombreEmpresa} onChange={this.handleChange} type="text" name="nombreEmpresa" placeholder="Nombre Empresa" id=""></input></span>
-                     <span className="mb-3"><label htmlFor="pais" className="subtitle">Seleccione un pais:</label> <input className='input inputs_width inputs_white' value={this.state.pais} onChange={this.handleChange} list="Countries" name="pais" placeholder="Pais"id=""></input></span>
+                     <span>
+                        <label className="subtitle mb-3" htmlFor="pais">
+                        Seleccione un país:
+                        </label>
+                        <select name="pais" id="countryId" class="inputs_width" onChange={this.handleChange}>
+                        {this.state.paises.map((pais) => {
+                            return (
+                            <option key={pais.name} value={pais.name}>
+                                {pais.name}
+                            </option>
+                            );
+                        })}
+                        </select>
+                    </span>
                      <span className="mb-3"><label htmlFor="correo" className="subtitle">Digite un correo electrónico:</label> <input className='input inputs_width inputs_white' value={this.state.correo} onChange={this.handleChange} type="email" name="correo" placeholder="Correo Electronico"id=""></input></span>
                      <span className="mb-3"><label htmlFor="telefono" className="subtitle">Digite un telefono:</label> <input className='input inputs_width inputs_white' value={this.state.telefono} onChange={this.handleChange} type="text" name="telefono" placeholder="Telefono"id=""></input></span>
                      <span className="mb-3"><label htmlFor="espesor" className="subtitle">Digite el espesor de la madera:</label> <input className='input inputs_width inputs_white' value={this.state.espesor} onChange={this.handleChange} list="Espesor" name="espesor"placeholder="Espesor(mm)" id=""></input></span>
