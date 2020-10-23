@@ -6,8 +6,8 @@ function Header() {
   return (
     <header className="App-header">
       <div className="header minWidth">
-        <div className="language">
-          <button className="btn btn_dark">Language</button>
+      <div className="language">
+          <div id="google_translate_element"></div>
         </div>
         <h1 className="title_name">MADEREXPO</h1>
         <div className="navBar">

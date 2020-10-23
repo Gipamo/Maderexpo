@@ -43,10 +43,7 @@ class Solicitudes extends Component {
                   <th>Tipo Solicitud</th>
                   <td>{solicitud.solicitud.tipoSolicitud}</td>
                 </tr>
-                <tr>
-                  <th>Medida</th>
-                  <td>{solicitud.solicitud.medida}</td>
-                </tr>
+                
                 <tr>
                   <th>Correo</th>
                   <td>{solicitud.solicitud.correo}</td>
