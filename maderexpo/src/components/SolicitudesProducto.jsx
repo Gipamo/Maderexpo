@@ -16,50 +16,65 @@ class Solicitudes extends Component {
     query.forEach(solicitud => {
       solicitudes.push({solicitud:solicitud.data(),idSolicitud:solicitud.id})
     })
+    console.log(solicitudes)
     this.setState({solicitudes})
   }
   render() {
     return (
       <>
-      <h2>Interesados en Producto</h2>
+      <h2>Interesados en el Producto</h2>
       <div>
-          <table class="login_table">
-            <thead>
-              <tr>
-                <th>Nombre Persona</th>
-                <th>Nombre Empresa</th>
-                <th>Correo</th>
-                <th>País</th>
-                <th>Teléfono</th>
-                <th>Correo</th>
-                <th>Ancho</th>
-                <th>Largo</th>
-                <th>Espesor</th>
-                <th>Descripción</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.solicitudes.map((solicitud) => {
-                return (
-                  <tr key={solicitud.solicitud.nombreUsuario}>
-                    <td>{solicitud.solicitud.nombreUsuario}</td>
-                    <td>{solicitud.solicitud.nombreEmpresa}</td>
-                    <td>{solicitud.solicitud.correo}</td>
-                    <td>{solicitud.solicitud.pais}</td>
-                    <td>{solicitud.solicitud.telefono}</td>
-                    <td>{solicitud.solicitud.correo}</td>
-                    <td>{solicitud.solicitud.ancho}</td>
-                    <td>{solicitud.solicitud.largo}</td>
-                    <td>{solicitud.solicitud.espesor}</td>
-                    <td>{solicitud.solicitud.comentarios}</td>
-                    <td class="table_button">
+          <table className="login_table subtitle">
+            {this.state.solicitudes.map((solicitud) => {
+              return (
+                <>
+                <tr>
+                  <th>Nombre Persona</th>
+                  <td className="table-border-top">{solicitud.solicitud.nombreUsuario}</td>
+                </tr>
+                <tr>
+                  <th>Nombre Empresa</th>
+                  <td>{solicitud.solicitud.nombreEmpresa}</td>
+                </tr>
+                <tr>
+                  <th>Correo</th>
+                  <td>{solicitud.solicitud.correo}</td>
+                </tr>
+                <tr>
+                  <th>País</th>
+                  <td>{solicitud.solicitud.pais}</td>
+                </tr>
+                <tr>
+                  <th>Teléfono</th>
+                  <td>{solicitud.solicitud.telefono}</td>
+                </tr>
+                <tr>
+                  <th>Ancho</th>
+                  <td>{solicitud.solicitud.ancho}</td>
+                </tr>
+                <tr>
+                  <th>Largo</th>
+                  <td>{solicitud.solicitud.largo}</td>
+                </tr>
+                <tr>
+                  <th>Espesor</th>
+                  <td>{solicitud.solicitud.espesor}</td>
+                </tr>
+                <tr>
+                  <th>Descripción</th>
+                  <td>{solicitud.solicitud.comentarios}</td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td className="table_button">
                     <ResponderSolicitud idSolicitud={solicitud.idSolicitud} nombreTabla="Producto"/>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                  </td>
+                </tr>
+                <br/>
+                </>
+              );
+            })}
+            </table>
         </div>
       </>
     );

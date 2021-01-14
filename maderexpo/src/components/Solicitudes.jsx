@@ -23,38 +23,46 @@ class Solicitudes extends Component {
       <>
       <h2>PQR y otros requerimientos</h2>
         <div>
-          <table class="login_table">
-            <thead>
-              <tr>
-                <th>Nombre</th>
-                <th>Tipo Persona</th>
-                <th>País</th>
-                <th>Tipo Solicitud</th>
-                <th>Medida</th>
-                <th>Correo</th>
-                <th>Descripción</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.solicitudes.map((solicitud) => {
-                return (
-                  <tr key={solicitud.solicitud.nombreUsuario}>
-                    <td>{solicitud.solicitud.nombreUsuario}</td>
-                    <td>{solicitud.solicitud.tipoUsuario}</td>
-                    <td>{solicitud.solicitud.pais}</td>
-                    <td>{solicitud.solicitud.tipoSolicitud}</td>
-                    <td>{solicitud.solicitud.medida}</td>
-                    <td>{solicitud.solicitud.correo}</td>
-                    <td>{solicitud.solicitud.solicitud}</td>
-                    <td class="table_button">
+          <table className="login_table subtitle">
+            {this.state.solicitudes.map((solicitud) => {
+              return (
+                <>
+                <tr>
+                  <th>Nombre</th>
+                  <td className="table-border-top">{solicitud.solicitud.nombreUsuario}</td>
+                </tr>
+                <tr>
+                  <th>Tipo persona</th>
+                  <td>{solicitud.solicitud.tipoUsuario}</td>
+                </tr>
+                <tr>
+                  <th>País</th>
+                  <td>{solicitud.solicitud.pais}</td>
+                </tr>
+                <tr>
+                  <th>Tipo Solicitud</th>
+                  <td>{solicitud.solicitud.tipoSolicitud}</td>
+                </tr>
+                
+                <tr>
+                  <th>Correo</th>
+                  <td>{solicitud.solicitud.correo}</td>
+                </tr>
+                <tr>
+                  <th>Descripción</th>
+                  <td>{solicitud.solicitud.solicitud}</td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td className="table_button">
                     <ResponderSolicitud idSolicitud={solicitud.idSolicitud} nombreTabla="PQR"/>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                  </td>
+                </tr>
+                <br/>
+                </>
+              );
+            })}
+            </table>
         </div>
       </>
     );

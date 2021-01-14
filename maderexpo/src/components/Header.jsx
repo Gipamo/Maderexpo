@@ -6,28 +6,22 @@ function Header() {
   return (
     <header className="App-header">
       <div className="header minWidth">
-        <div className="language">
-          <div class="btn" id="google_translate_element"></div>
+      <div className="language">
+          <div id="google_translate_element"></div>
         </div>
         <h1 className="title_name">MADEREXPO</h1>
         <div className="navBar">
-          <Link to="/">
-            <a href="" class="navBar_item">Inicio</a>
+          <Link className="navBar_item" to="/">Inicio
           </Link>
-          <Link to="/who">
-            <a href="" class="navBar_item">Nuestras Operaciones</a>
+          <Link className="navBar_item" to="/who">Nuestras Operaciones
           </Link>
-          <Link to="/compromise">
-            <a href="" class="navBar_item">Desarrollo Sostenible</a>
+          <Link className="navBar_item" to="/compromise">Desarrollo Sostenible
           </Link>
-          <Link to="/product">
-            <a href="" class="navBar_item">Nuestro Producto</a>
+          <Link className="navBar_item" to="/product">Nuestro Producto
           </Link>
-          <Link to="/relation">
-            <a href="" class="navBar_item">Relacionate con nosotros</a>
+          <Link className="navBar_item" to="/relation">Relacionate con nosotros
           </Link>
-          <Link to="/login">
-            <a href="" class="navBar_item">Iniciar Sesion</a>
+          <Link className="navBar_item" to="/login">Iniciar Sesion
           </Link>
         </div>
       </div>

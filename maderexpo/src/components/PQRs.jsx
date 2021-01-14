@@ -115,7 +115,7 @@ class PQRs extends Component {
             <label className="subtitle" htmlFor="pais">
               Seleccione un país:
             </label>
-            <select id="pais" name="pais" id="countryId" class="inputs_width" onChange={this.handleChange}>
+            <select name="pais" id="countryId" class="inputs_width" onChange={this.handleChange}>
               {this.state.paises.map((pais) => {
                 return (
                   <option key={pais.name} value={pais.name}>
@@ -186,8 +186,8 @@ class PQRs extends Component {
               placeholder="Introduzca su solicitud detalladamente"
               value={this.state.solicitud}
             ></input>
-            <button className="btn btn_dark">Enviar</button>
           </span>
+          <button className="btn btn_dark">Enviar</button>
         </form>
       </div>
     );

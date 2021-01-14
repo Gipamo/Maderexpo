@@ -11,38 +11,35 @@ function ButtonsRelation(){
 
         return(
             <div>
-                <div class="parent">
-                  <div class="upButton">
-                    <div class="div1">
-                      <Link to="/map">
-                        <img src={IconMap} alt="Icono" /><br/>
-                        <a href="" class="hover">Sedes Fisicas</a>
+                <div className="parent">
+                  <div className="upButton">
+                    <div className="div1">
+                      <Link className="hover" to="/map">
+                        <img src={IconMap} alt="Icono" /><br/>Sedes Fisicas
                       </Link>
                     </div>
-                    <div class="div2">
+                    <div className="div2">
                     <Link to="/question">
-                      <img src={IconQuestion} alt="Icono" /><br/>
-                      <a href="">Preguntas Frecuentes</a>
+                      <img src={IconQuestion} alt="Icono" /><br/>Preguntas Frecuentes
                     </Link>
                     </div>
-                    <div class="div3">
+                    <div className="div3">
                       <Link to="/glosary">
-                        <img src={IconGlosary} alt="Icono"/><br/>
-                        <a href="">Glosario</a>
+                        <img src={IconGlosary} alt="Icono"/><br/>Glosario
                       </Link>
                     </div>
                   </div>
-                  <div class="downButton">
-                    <div class="div4">
+                  <div className="downButton">
+                    <div className="div4">
                       <Link to="/pqrs">
                         <img src={IconSugest} alt="Icono" /><br/>
-                        <a href="">Buzon de sugerencias</a>
+                      Buzon de sugerencias
                       </Link>
                     </div>
-                    <div class="div6">
+                    <div className="div6">
                       <Link to="/productform">
                         <img src={IconProduct} alt="Icono" /><br/>
-                        <a href="">Preguntas del Producto</a>
+                      Preguntas del Producto
                       </Link>
                     </div>
                 </div>

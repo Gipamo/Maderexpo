@@ -8,15 +8,16 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "firebase": "^7.23.0",
-    "google-map-react": "^2.1.6",
+    "google-map-react": "^2.1.8",
     "google-maps-react": "^2.0.6",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-google-charts": "^3.0.15",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-script-tag": "^1.1.2",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.4.4",
     "reactfire": "^2.0.3"
   },
   "scripts": {
